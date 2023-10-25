@@ -68,6 +68,7 @@ int main()
 		{
 			cout << matrix[i][j] << " ";
 		}
+        cout << endl;
 	}
 
 
@@ -102,6 +103,7 @@ int main()
 		{
 			cout << matrix2[i][j] << " ";
 		}
+        cout << endl;
 	}
 
 	// podmínka stejného počtu řádků a sloupců
@@ -123,6 +125,7 @@ for (int i = 0; i < rows; i++)
 }
 
 	//násobení matic
+cout << "Soucin matic: " << endl;
 for (int i = 0; i < rows; i++)
 {
     for (int j = 0; j < cols; j++)
@@ -133,6 +136,7 @@ for (int i = 0; i < rows; i++)
 }
     
         //dělení matic
+cout << "Podil matic: " << endl;    
 for (int i = 0; i < rows; i++)
 {
     for (int j = 0; j < cols; j++)
@@ -153,8 +157,9 @@ for (int i = 0; i < rows; i++)
     cout << endl;
 }
 
+
     return 0;
-    
+
 
 
 
