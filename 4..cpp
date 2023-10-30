@@ -33,7 +33,7 @@ int main() {
             getline(ss, otazka.odpovedA, ';');
             getline(ss, otazka.odpovedB, ';');
             getline(ss, otazka.odpovedC, ';');
-            getline(ss, otazka.spravnaOdpoved, ';');
+            getline(ss, otazka.spravnaOdpoved, '\r');
             otazkySeznam.push_back(otazka);
         }
     }
