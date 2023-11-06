@@ -3,16 +3,28 @@
 
 using namespace std;
 
-class Kalendar
+struct Kalendar 
 {
-public:
     int minuta;
     int hodina;
     int den;
     int mesic;
     int rok;
+    string udalost;
 
-};
+    
+
+
+
+
+
+
+   
+
+
+
+
+
 
 
 
