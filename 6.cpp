@@ -210,18 +210,21 @@ Event(std::string name, std::string start_time, std::string end_time, std::strin
 
 bool operator < (const Event& obj) const
 {
+   // porovnej start_time
     if (start_time < obj.start_time)
     {
         return true;
     }
     else if (start_time == obj.start_time)
     {
+        // porovnej end_time
         if (end_time < obj.end_time)
         {
             return true;
         }
         else if (end_time == obj.end_time)
         {
+            // porovnej name
             if (name < obj.name)
             {
                 return true;
@@ -230,6 +233,7 @@ bool operator < (const Event& obj) const
     }
     return false;
 }
+
 
 bool operator > (const Event& obj) const
 {
@@ -294,6 +298,9 @@ friend std::ostream& operator << (std::ostream& out, const Event& obj)
     return out;
 }
 
+friend class Calendar;
+
+
 
 
 }; 
@@ -314,58 +321,79 @@ public:
 Calendar(std::string name)
 {
     this->name = name;
+    this->path = name + ".txt";
 }
 
 Calendar(std::string name, std::string path)
 {
-    this->name = name;
-    this->path = path;
+    	this->name = name;
+	this->path = path;
+
+	std::string event;
+	std::ifstream file;
+	file.open(path);
+	std::string line;
+	while (getline(file, line)) {
+		if (line != "") {
+			event += line + '\n';
+		}
+		else {
+			this->events.push_back(Event(event));
+			event.erase();
+		}
+	}
+	if (!event.empty()) {
+		this->events.push_back(Event(event));
+		event.erase();
+	}
+	this->events.sort();
 }
 
 void addEvent(Event event)
 {
-    events.push_back(event);
-    events.sort();
+    if (std::find(events.begin(), events.end(), event) == events.end())
+		events.push_back(event);
+	else 
+		std::cout << "Event already in calendar" << std::endl <<std::endl;
+	events.sort();
 }
 
 Calendar findEvent(std::string name)
 // najde event podle jména
 {
-    Calendar c = Calendar("TEST");
-    for (Event e : events)
-    {
-        if (e.name == name)
-        {
-            c.addEvent(e);
-        }
-    }
-    return c;
+    Calendar foundEvents = Calendar("Events named " + name);
+	for (Event e : events) {
+		if (e.name == name) {
+			foundEvents.addEvent(e);
+		}
+	}
+	return foundEvents;
 }
 
 Calendar findEventsAfter(Time time)
 {
-    Calendar c = Calendar("TEST");
-    for (Event e : events)
-    {
-        if (e.start_time > time)
-        {
-            c.addEvent(e);
-        }
-    }
-    return c;
+    std::stringstream time_s;
+	time_s << time;
+	Calendar foundEvents = Calendar("Events after " + time_s.str());
+	for (Event e : events) {
+		if (e.start_time > time) {
+			foundEvents.addEvent(e);
+		}
+	}
+	return foundEvents;
 }
 
 Calendar findEventsBefore(Time time)
 {
-    Calendar c = Calendar("TEST");
-    for (Event e : events)
-    {
-        if (e.start_time < time)
-        {
-            c.addEvent(e);
-        }
-    }
-    return c;
+  std::stringstream time_s;
+	time_s << time;
+	Calendar foundEvents = Calendar("Events before " + time_s.str());
+	for (Event e : events) {
+		if (e.start_time < time) {
+			foundEvents.addEvent(e);
+		}
+	}
+	return foundEvents;
 }
 
  
@@ -379,8 +407,6 @@ friend std::ostream& operator << (std::ostream& out, const Calendar& obj)
     }
     return out;
 }
-
-
 
 
 int main() 
