@@ -28,7 +28,7 @@ class Square : public Shape
         int getA();
 };
 
-Square::Square()
+Square::Square(): Shape()
 {
     cout << "Vykresli ctverec" << endl;
 }
