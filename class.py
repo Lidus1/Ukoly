@@ -49,7 +49,14 @@ class Lod:
 
 
     def naviguj(self, soubor:str)->None:
-                
+        with open(input.txt, "r", encoding="utf-8") as file:
+            data = file.read().split("\n")
+            for i in data:
+                self.pohyb(i[0], int(i[1:]))
+                print(i)
+                print(self)
+
+
 
 
 
