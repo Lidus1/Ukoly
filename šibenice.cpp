@@ -11,7 +11,7 @@ using namespace std;
 
 string generujSlova()
 {
- // vygeneruj random pozici slova ze souboru slova.txt a vrat slovo na teto pozici
+
     ifstream soubor("slova.txt");
     string slovo;
     string slova[100]; 
@@ -48,12 +48,18 @@ list<int> hledejPismeno(string slovo, char pismeno)
 
 int main()
 {
-    cout << generujSlova() << endl;
-    /*char pismeno;
+    
+    char pismeno;
     string aaa = generujSlova();
     cin >> pismeno;
     cout << aaa << endl;
-    cout << hledejPismeno(aaa, pismeno).size() << endl;*/
+    cout << hledejPismeno(aaa, pismeno).size() << endl; 
+
+
+
+
+
+
 
 
 
@@ -68,3 +74,7 @@ int main()
 
     return 0;
 }
+
+
+// funkce, která kontroluje, zda je slovo napsané celé správně
+
