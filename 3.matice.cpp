@@ -1,4 +1,4 @@
-// vytváření dvou matic pomocí dynmického pole a jejich násobení, dělení, sčítání a odčítání 
+
 
 #include <iostream>
 #include <string>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-// vytvoření matice pomocí dynamického pole, aby se daly zadávat různé hodnoty
+
 int** createMatrix(int rows, int cols)
 {
 	int** matrix = new int* [rows];
@@ -23,7 +23,7 @@ int** createMatrix(int rows, int cols)
 }
 
 
-// vytvoření 2. matice pomocí dynamického pole
+
 int** createMatrix2(int rows, int cols)
 {
 	int** matrix2 = new int* [rows];
@@ -37,17 +37,17 @@ int** createMatrix2(int rows, int cols)
 
 int main()
 {
-	// zadej počet řádků první matice
+	
 	int rows;
 	cout << "Zadej pocet radku prvni matice: " << endl;
 	cin >> rows;
 
-	// zadej počet sloupců první matice
+	
 	int cols;
 	cout << "Zadej pocet sloupcu prvni matice: " << endl;
 	cin >> cols;
 
-	// zadej hodnoty první matice podle počtu řádků a sloupců
+	
 	int** matrix = createMatrix(rows, cols);
 	cout << "Zadej hodnoty prvni matice: " << endl;
 	for (int i = 0; i < rows; i++)
@@ -59,7 +59,7 @@ int main()
 		}
 	}
 
-	// vypiš první matici
+	
 	cout << "Prvni matice: " << endl;
 	for (int i = 0; i < rows; i++)
 	{
@@ -72,17 +72,17 @@ int main()
 	}
 
 
-	// zadej počet řádků druhé matice
+	
 	int rows2;
 	cout << "Zadej pocet radku druhe matice: " << endl;
 	cin >> rows2;
 
-	// zadej počet sloupců druhé matice
+	
 	int cols2;
 	cout << "Zadej pocet sloupcu druhe matice: " << endl;
 	cin >> cols2;
 
-	// zadej hodnoty druhé matice podle počtu řádků a sloupců
+	
 	int** matrix2 = createMatrix2(rows2, cols2);
 	cout << "Zadej hodnoty druhe matice: " << endl;
 	for (int i = 0; i < rows2; i++)
@@ -94,7 +94,7 @@ int main()
 
 	}
 
-	// vypiš druhou matici
+	
 	cout << "Druha matice: " << endl;
 	for (int i = 0; i < rows2; i++)
 	{
@@ -106,14 +106,14 @@ int main()
         cout << endl;
 	}
 
-	// podmínka stejného počtu řádků a sloupců
+	
 	if (rows != rows2 || cols != cols2)
 	{
 		cout << "Matice nemaji stejny pocet radku a sloupcu, nelze provest operace." << endl;
 		return 0;
 	}
 
-	// výpočet součtu matic a vypsání výsledku 
+	
 	cout << "Soucet matic: " << endl;
 for (int i = 0; i < rows; i++)
 {
@@ -124,7 +124,7 @@ for (int i = 0; i < rows; i++)
     cout << endl;
 }
 
-	//násobení matic
+	
 cout << "Soucin matic: " << endl;
 for (int i = 0; i < rows; i++)
 {
@@ -135,7 +135,7 @@ for (int i = 0; i < rows; i++)
     cout << endl;
 }
     
-        //dělení matic
+        
 cout << "Podil matic: " << endl;    
 for (int i = 0; i < rows; i++)
 {
@@ -146,7 +146,7 @@ for (int i = 0; i < rows; i++)
     cout << endl;
 }
     
-        //odčítání matic    
+      
 cout << "Rozdil matic: " << endl;
 for (int i = 0; i < rows; i++)
 {
