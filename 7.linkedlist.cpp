@@ -102,6 +102,10 @@ public:
         }
         return cur_node;
     }
+
+    Node<T>* operator[](int index) {
+        return getNode(index);
+    }
 };
 
 int main() {
@@ -127,6 +131,11 @@ int main() {
     cout << endl << "Node1&2&3:" << endl;
     ll.printList();
 
+    
+    cout << endl << "Accessing nodes using operator[]" << endl;
+    cout << "Node at index 0: " << ll[0]->val << endl;
+    cout << "Node at index 1: " << ll[1]->val << endl;
+    cout << "Node at index 2: " << ll[2]->val << endl;
 
     return 0;
 }
