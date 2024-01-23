@@ -1,10 +1,15 @@
 
+# stáhnout pouze knihu Othelo z odkazu 'https://www.gutenberg.org/cache/epub/2267/pg2267-images.html'
+
 import requests
+import os
+import bs4
+import re
 
-url = 'https://www.gutenberg.org/cache/epub/2267/pg2267-images.html'
-r = requests.get(url, allow_redirects=True)
+# vytvoření složky pro uložení souborů
+os.makedirs('Othelo', exist_ok=True)
 
-open('PraceSInternetem.html', 'wb').write(r.content)
-
-print('Stazeno')
+# stáhnutí stránky
+res = requests.get('https://www.gutenberg.org/cache/epub/2267/pg2267-images.html')
+res.raise_for_status()
 
