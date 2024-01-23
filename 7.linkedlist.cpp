@@ -132,7 +132,7 @@ int main() {
     ll.printList();
 
     
-    cout << endl << "Accessing nodes using operator[]" << endl;
+    cout << endl << "Acces to nodes" << endl;
     cout << "Node at index 0: " << ll[0]->val << endl;
     cout << "Node at index 1: " << ll[1]->val << endl;
     cout << "Node at index 2: " << ll[2]->val << endl;
