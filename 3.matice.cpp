@@ -107,12 +107,28 @@ int main()
 	}
 
 	
-	if (rows != rows2 || cols != cols2)
+cout << "Soucin matic: " << endl;
+for (int i = 0; i < rows; i++)
+{
+	for (int j = 0; j < cols; j++)
+	{
+		if (i < rows2 && j < cols2) {
+			cout << (matrix[i][j] * matrix2[i][j]) << " ";
+		} else {
+			cout << matrix[i][j] << " ";
+		}
+	}
+	cout << endl;
+}
+
+
+
+	
+if (rows != rows2 || cols != cols2)
 	{
 		cout << "Matice nemaji stejny pocet radku a sloupcu, nelze provest operace." << endl;
 		return 0;
 	}
-
 	
 	cout << "Soucet matic: " << endl;
 for (int i = 0; i < rows; i++)
@@ -124,16 +140,9 @@ for (int i = 0; i < rows; i++)
     cout << endl;
 }
 
+
 	
-cout << "Soucin matic: " << endl;
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < cols; j++)
-    {
-        cout << (matrix[i][j] * matrix2[i][j]) << " ";
-    }
-    cout << endl;
-}
+
     
         
 cout << "Podil matic: " << endl;    
