@@ -43,4 +43,26 @@ int main()
             
 		}
 	}
+
+    for (int i = 0; i < cisla.size(); i++) {
+        for (int j = 0; j < cisla.size(); j++) {
+            for (int k = 0; k < cisla.size(); k++) {
+                if (cisla[i] + cisla[j] + cisla[k] == 2020) 
+  
+            {
+                cout << "Cisla a a b a c jsou: " << endl; 
+                cout << cisla[i] << endl;
+                cout << cisla[j] << endl;
+                cout << cisla[k] << endl;
+                cout << "Soucet cisel a a b a c je:" <<endl;
+                cout << cisla[i] + cisla[j] + cisla[k] << endl;
+                cout << "Součin cisle a a b a c je:" << endl;
+                cout << cisla[i] * cisla[j] * cisla[k] << endl;
+
+
+}
+}
+}
+}
+    return 0;
 }
