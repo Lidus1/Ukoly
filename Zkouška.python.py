@@ -33,7 +33,11 @@ class Library:
             return books
 
     def add_book(self, book):
-        if book not in self.books:
+        existing_books = [b for b in self.books if b.id == book.id]
+        if existing_books:
+            existing_book = existing_books[0]
+            existing_book.available = book.available  
+        else:
             self.books.append(book)
             self.books.sort()
 
